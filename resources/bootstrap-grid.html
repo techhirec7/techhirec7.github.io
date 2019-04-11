@@ -62,6 +62,11 @@
    margin-right:20px;
  }
 
+ .box {
+   display:inline-block;
+   vertical-align:top;
+ }
+
 </style>
 </head>
 <body>
@@ -69,11 +74,11 @@
 <div class="container-fluid">
   <h1>Bootstrap Tutorial</h1>
 
-  <div style="display:inline-block; border:0px solid black; vertical-align:top;" id="deviceImage">
+  <div class="box" id="deviceImage">
     testing
   </div>
-  <div style="display:inline-block; border:0px solid red; vertical-align:top;">
-      <h5 id="size">Large</h5>
+  <div class="box">
+    <h5 id="size">Large</h5>
     Window width: <span id="myWidth"></span>px
     <br />
       Device type: <span id="myDevice"></span>
