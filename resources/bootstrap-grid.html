@@ -52,6 +52,16 @@
    font-weight: bold;
  }
 
+ h5 {
+   padding: 0px;
+   margin: 0px;
+ }
+
+ img {
+   height: 100px;
+   margin-right:20px;
+ }
+
 </style>
 </head>
 <body>
@@ -59,36 +69,39 @@
 <div class="container-fluid">
   <h1>Bootstrap Tutorial</h1>
 
-  <div class="container-fluid">
-
-
-      Window width: <span id="myWidth"></span>px
-      <br />
-      Bootstrap grid class: <span id="bootstrapSize"></span>
-      <br />
+  <div style="display:inline-block; border:0px solid black; vertical-align:top;" id="deviceImage">
+    testing
+  </div>
+  <div style="display:inline-block; border:0px solid red; vertical-align:top;">
+      <h5 id="size">Large</h5>
+    Window width: <span id="myWidth"></span>px
+    <br />
       Device type: <span id="myDevice"></span>
-      <br /><br />
+    <br />
+    Bootstrap grid class: <span id="bootstrapSize"></span>
+    <br /><br />
+  </div>
 
       <h5>ROW 1 (Responsive)</h5>
       <div class="row">
-      <div class="col-6 col-md-2 color1">COL 1</div>
-      <div class="col-6 col-md-2 color2">COL 2</div>
-      <div class="col-6 col-md-2 color1">COL 3</div>
-      <div class="col-6 col-md-2 color2">COL 4</div>
-      <div class="col-6 col-md-2 color1">COL 5</div>
-      <div class="col-6 col-md-2 color2">COL 6</div>
+        <div class="col-6 col-md-2 color1 showClass">COL 1</div>
+        <div class="col-6 col-md-2 color2 showClass">COL 2</div>
+        <div class="col-6 col-md-2 color1 showClass">COL 3</div>
+        <div class="col-6 col-md-2 color2 showClass">COL 4</div>
+        <div class="col-6 col-md-2 color1 showClass">COL 5</div>
+        <div class="col-6 col-md-2 color2 showClass">COL 6</div>
     </div>
-  </div>
+
   <br>
 
-  <div class="container-fluid">
+
     <h5>ROW 2</h5>
     <div class="row">
       <div class="col color2">COL 1</div>
       <div class="col color1">COL 2</div>
       <div class="col color2">COL 3</div>
     </div>
-  </div>
+
 </div>
 
 <script>
@@ -106,20 +119,29 @@ function convertWidth(x) {
   if (x < 768) {
     $('#bootstrapSize').html('<b>XS</b> (use col-#)');
     $('#myDevice').html('<b>Phone</b> (less than 768px)');
+    $('#size').html('Extra Small');
+    $('#deviceImage').html('<img src=https://cdn1.iconfinder.com/data/icons/apple-devices-iphone-ipad-ipod-imac-macbook-watch/128/ipod_white-256.png />');
   }
   if (x >= 768 && x < 992) {
     $('#bootstrapSize').html('<b>S</b> (use col-sm-#)');
     $('#myDevice').html('<b>Tablet</b> (768px and up)');
+    $('#size').html('Small');
+    $('#deviceImage').html('<img src=https://cdn1.iconfinder.com/data/icons/apple-devices-iphone-ipad-ipod-imac-macbook-watch/128/ipad_white-256.png />');
   }
   if (x >= 992 && x < 1200) {
     $('#bootstrapSize').html('<b>M</b> (use col-md-#)');
     $('#myDevice').html('<b>Desktop</b> (992px and up)');
+    $('#size').html('Medium');
+    $('#deviceImage').html('<img src=https://cdn1.iconfinder.com/data/icons/apple-devices-iphone-ipad-ipod-imac-macbook-watch/128/macbook-256.png />');
   }
   if (x >= 1200) {
     $('#bootstrapSize').html('<b>L</b> (use col-lg-#)');
     $('#myDevice').html('<b>Large Desktop</b> (1200px and up)');
+    $('#size').html('Large');
+    $('#deviceImage').html('<img src=https://cdn1.iconfinder.com/data/icons/apple-devices-iphone-ipad-ipod-imac-macbook-watch/128/imac-256.png />');
   }
 }
+
 </script>
 </body>
 </html>
